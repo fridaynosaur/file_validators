@@ -47,7 +47,7 @@ module ActiveModel
         value = JSON.parse(value) if value.is_a?(String)
         return [] unless value.present?
 
-        value = OpenStruct.new(value) if value.is_a?(Hash)
+        value = Struct.new(value) if value.is_a?(Hash)
 
         Array.wrap(value).reject(&:blank?)
       end
