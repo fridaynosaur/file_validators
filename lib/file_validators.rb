@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'active_model'
-require 'ostruct'
 
 module FileValidators
   extend ActiveSupport::Autoload

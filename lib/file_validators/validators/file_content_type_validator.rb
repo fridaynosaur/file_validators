@@ -59,7 +59,7 @@ module ActiveModel
         if tool.present?
           FileValidators::MimeTypeAnalyzer.new(tool).call(value)
         else
-          value = OpenStruct.new(value) if value.is_a?(Hash)
+          value = Struct.new(value) if value.is_a?(Hash)
           value.content_type
         end
       end
